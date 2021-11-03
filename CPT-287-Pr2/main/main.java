@@ -7,8 +7,10 @@ import java.util.Scanner;
 
 public class main {
 
+	//main function, processes input file and calls other functions
 	public static void main(String[] args) throws IOException {
 		//Open input file, scanner, output file, and writer
+		//will need to change input location to your own input location
 		FileInputStream inputFile = new FileInputStream("E:/downloads/input.txt");
 		Scanner scanner = new Scanner(inputFile);
 		
@@ -32,7 +34,8 @@ public class main {
 	
 	
 
-	
+	//function to evaluate a postfix string
+	//returns the answer of the evaluation
 	public static int evaluatePostfix (String str) {
 		
 		//create a stack
@@ -276,6 +279,8 @@ public class main {
 	}
 	
 	
+	//converts an infix string to a postfix string
+	//return the postfix string
 	public static String infixToPostfix(String infixExp) {
 		// Initialize an empty stack
 		Stack<String> stk = new Stack<>();
@@ -330,6 +335,9 @@ public static int precedence(String operator) {
 	throw new IllegalArgumentException(String.format("Operator %s is not a valid operator.", operator));
 }
 	
+	//converts a string with no whitespace to a string with whitespace
+	//returns a string with whitespace
+	//example: changes 2+2 to 2 + 2
 	public static String format(String original) {
 		// convert to character array
 		char[] arr = original.toCharArray();
